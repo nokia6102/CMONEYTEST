@@ -12,6 +12,9 @@
 		CE08F4DB265257100062C5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08F4D9265257100062C5ED /* Main.storyboard */; };
 		CE08F4DD265257120062C5ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE08F4DC265257120062C5ED /* Assets.xcassets */; };
 		CE08F4E0265257120062C5ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08F4DE265257120062C5ED /* LaunchScreen.storyboard */; };
+		CE08F4E926526D700062C5ED /* excmoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F4E826526D700062C5ED /* excmoney.swift */; };
+		CE08F4EB265296290062C5ED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08F4EA265296290062C5ED /* MenuViewController.swift */; };
+		CED3BA0B2652A806004C2A32 /* AqiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3BA0A2652A806004C2A32 /* AqiCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		CE08F4DC265257120062C5ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE08F4DF265257120062C5ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE08F4E1265257120062C5ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE08F4E826526D700062C5ED /* excmoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = excmoney.swift; sourceTree = "<group>"; };
+		CE08F4EA265296290062C5ED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CED3BA0A2652A806004C2A32 /* AqiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		CE08F4D4265257100062C5ED /* cMoenyEx1 */ = {
 			isa = PBXGroup;
 			children = (
+				CE08F4E726526C3D0062C5ED /* Model */,
 				CE08F4D5265257100062C5ED /* AppDelegate.swift */,
 				CE08F4D7265257100062C5ED /* ViewController.swift */,
+				CE08F4EA265296290062C5ED /* MenuViewController.swift */,
 				CE08F4D9265257100062C5ED /* Main.storyboard */,
 				CE08F4DC265257120062C5ED /* Assets.xcassets */,
 				CE08F4DE265257120062C5ED /* LaunchScreen.storyboard */,
 				CE08F4E1265257120062C5ED /* Info.plist */,
+				CED3BA0A2652A806004C2A32 /* AqiCollectionViewCell.swift */,
 			);
 			path = cMoenyEx1;
+			sourceTree = "<group>";
+		};
+		CE08F4E726526C3D0062C5ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE08F4E826526D700062C5ED /* excmoney.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE08F4D8265257100062C5ED /* ViewController.swift in Sources */,
+				CED3BA0B2652A806004C2A32 /* AqiCollectionViewCell.swift in Sources */,
+				CE08F4E926526D700062C5ED /* excmoney.swift in Sources */,
 				CE08F4D6265257100062C5ED /* AppDelegate.swift in Sources */,
+				CE08F4EB265296290062C5ED /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YT6YT5Z5FB;
 				INFOPLIST_FILE = cMoenyEx1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YT6YT5Z5FB;
 				INFOPLIST_FILE = cMoenyEx1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
