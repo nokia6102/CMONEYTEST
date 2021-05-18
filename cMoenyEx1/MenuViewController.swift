@@ -16,12 +16,15 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        if aqiArray != nil {
             let cell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "aqiCell", for: indexPath) as! AqiCollectionViewCell
- 
-           let a = aqiArray![indexPath.row].title
+           //set wrapping button label
+           cell.btnTitle.titleLabel?.lineBreakMode = .byWordWrapping
+           cell.btnTitle.titleLabel?.textAlignment = .center
+           //
            cell.btnTitle.setTitle(aqiArray![indexPath.row].title, for: .normal)
+           //
            cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].url!)
-           // cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].hdurl!)
-         return cell
+
+        return cell
        }else{
         let errorCell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "errorCell", for: indexPath)
         
