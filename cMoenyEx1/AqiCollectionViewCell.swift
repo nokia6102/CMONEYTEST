@@ -10,7 +10,6 @@ import UIKit
 
 class AqiCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var btnTitle: UIButton!
-  
-//    var url:String?
+    @IBOutlet weak var txtTitle: UILabel!
+    
 }

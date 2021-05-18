@@ -17,27 +17,28 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
        if aqiArray != nil {
             let cell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "aqiCell", for: indexPath) as! AqiCollectionViewCell
            //set wrapping button label
-           cell.btnTitle.titleLabel?.lineBreakMode = .byWordWrapping
-           cell.btnTitle.titleLabel?.textAlignment = .center
+//           cell.btnTitle.titleLabel?.lineBreakMode = .byWordWrapping
+//           cell.btnTitle.titleLabel?.textAlignment = .center
            //
-           cell.btnTitle.setTitle(aqiArray![indexPath.row].title, for: .normal)
+//           cell.btnTitle.setTitle(aqiArray![indexPath.row].title, for: .normal)
+           cell.txtTitle.text = aqiArray![indexPath.row].title!
            //
            cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].url!)
-
+           
         return cell
        }else{
         let errorCell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "errorCell", for: indexPath)
-        
         return errorCell
         }
-        
-        
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        self.performSegue(withIdentifier: "userSelectSegue", sender: self)
+    }
     
     @IBOutlet weak var aqiCollectionView: UICollectionView!
-
+    var selectedRow = 0
     var timer: Timer!
     var refreshControl: UIRefreshControl!
     var aqiArray :[ExCmoney]?
@@ -49,6 +50,8 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
         minimumLineSpacing: 1,
         sectionInset: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     )
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,15 +73,23 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+	
+        print ("selectROw: \(selectedRow)")
+        if (segue.identifier == "userSelectSegue") {
+            let nextVC =  segue.destination as! DetailViewController
+            nextVC.passDate = self.aqiArray?[selectedRow].date
+            nextVC.passHdurl = self.aqiArray?[selectedRow].hdurl
+            nextVC.passTitle = self.aqiArray?[selectedRow].title
+            nextVC.passDescription = self.aqiArray?[selectedRow].descriptionField
+        }
+        
     }
-    */
+ 
 
     //timer refresh
     @objc func updateData() {
