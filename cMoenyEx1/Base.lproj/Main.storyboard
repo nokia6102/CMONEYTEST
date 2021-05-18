@@ -18,16 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Astronmy Picture of the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-rF-wOB">
-                                <rect key="frame" x="80" y="136" width="215" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronmy Picture of the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-rF-wOB">
+                                <rect key="frame" x="80" y="134" width="215" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpg-09-Zbd">
-                                <rect key="frame" x="159" y="318" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpg-09-Zbd">
+                                <rect key="frame" x="145" y="319" width="84" height="29"/>
                                 <state key="normal" title="Reqeust"/>
                                 <connections>
                                     <segue destination="cah-ev-Bdt" kind="show" id="Xlq-xe-Pe3"/>
@@ -35,13 +33,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fpg-09-Zbd" firstAttribute="centerX" secondItem="oyV-rF-wOB" secondAttribute="centerX" id="0bp-D6-BBX"/>
+                            <constraint firstItem="oyV-rF-wOB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Byw-sf-mM6"/>
+                            <constraint firstItem="fpg-09-Zbd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="Mz2-9u-vVA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fpg-09-Zbd" secondAttribute="bottom" constant="319" id="QhJ-J2-mHc"/>
+                            <constraint firstItem="fpg-09-Zbd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bQ4-gt-lvx"/>
+                            <constraint firstItem="oyV-rF-wOB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hRQ-OO-64g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="mHE-M6-EzI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="95"/>
+            <point key="canvasLocation" x="804" y="94.902548725637189"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="yah-ST-AHe">
@@ -54,7 +60,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VlU-AL-veU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OqS-PH-csn">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="OqS-PH-csn">
                                     <size key="itemSize" width="93" height="92"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -99,37 +105,12 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="errorCell" id="2SY-HQ-rMl" customClass="AqiCollectionViewCell" customModule="cMoenyEx1" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="0.0" width="93" height="92"/>
+                                        <rect key="frame" x="94" y="0.0" width="93" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-ap-2LK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="93" height="92"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIL-86-Xr5">
-                                                    <rect key="frame" x="-10" y="28" width="93" height="92"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="QIL-86-Xr5" firstAttribute="leading" secondItem="2SY-HQ-rMl" secondAttribute="leading" id="3Uk-nt-USB"/>
-                                            <constraint firstAttribute="trailing" secondItem="UcD-ap-2LK" secondAttribute="trailing" id="8jl-wV-ZxC"/>
-                                            <constraint firstItem="UcD-ap-2LK" firstAttribute="leading" secondItem="2SY-HQ-rMl" secondAttribute="leading" id="Xnb-yU-g9A"/>
-                                            <constraint firstAttribute="bottom" secondItem="UcD-ap-2LK" secondAttribute="bottom" id="ZU3-Li-7pU"/>
-                                            <constraint firstItem="QIL-86-Xr5" firstAttribute="top" secondItem="2SY-HQ-rMl" secondAttribute="top" id="eyG-ue-PNO"/>
-                                            <constraint firstAttribute="trailing" secondItem="QIL-86-Xr5" secondAttribute="trailing" id="n90-xc-8cQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="QIL-86-Xr5" secondAttribute="bottom" id="njC-j6-djm"/>
-                                            <constraint firstItem="UcD-ap-2LK" firstAttribute="top" secondItem="2SY-HQ-rMl" secondAttribute="top" id="pIP-XX-4O2"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="btnTitle" destination="QIL-86-Xr5" id="Qy1-4V-DdZ"/>
-                                            <outlet property="imgView" destination="UcD-ap-2LK" id="7KH-Ws-vCT"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

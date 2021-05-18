@@ -38,19 +38,28 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     var timer: Timer!
     var refreshControl: UIRefreshControl!
     var aqiArray :[ExCmoney]?
-
+    
+    //set 4 rows flowlayout
+    let columnLayout = ColumnFlowLayout(
+        cellsPerRow: 4,
+        minimumInteritemSpacing: 1,
+        minimumLineSpacing: 1,
+        sectionInset: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set delgates
         aqiCollectionView.dataSource = self
         aqiCollectionView.delegate = self
-        
+        //set 4 rows
+        aqiCollectionView?.collectionViewLayout = columnLayout
+        aqiCollectionView?.contentInsetAdjustmentBehavior = .always
         //refresh
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(updateData), for: UIControl.Event.valueChanged)
         aqiCollectionView.addSubview(refreshControl)
-//        aqiTabelView.addSubview(refreshControl)
         
         //MARK: - fetch data in the first time
         getData()
@@ -78,6 +87,7 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
         }
     }
 }
+
 
 extension MenuViewController{
     func getData() {
