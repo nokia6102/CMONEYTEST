@@ -18,9 +18,8 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
             let cell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "aqiCell", for: indexPath) as! AqiCollectionViewCell
  
            let a = aqiArray![indexPath.row].title
-        print ("*a \(String(describing: a)),\(indexPath.row)")
            cell.btnTitle.setTitle(aqiArray![indexPath.row].title, for: .normal)
-           cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].hdurl!)
+           cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].url!)
            // cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].hdurl!)
          return cell
        }else{
