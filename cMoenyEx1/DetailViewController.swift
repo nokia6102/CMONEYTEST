@@ -28,7 +28,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtDate.text = passDate
+       
+        txtDate.text =  Date.getFormattedDate(dateString: passDate!, formatter: "yyyy MMM. d")
         imgHdurl.loadImageUsingCache(withUrl: passHdurl!)
         txtTitle.text = passTitle
         txtCopyright.text = passCopyright
@@ -46,4 +47,18 @@ class DetailViewController: UIViewController {
     }
     */
 
+}
+
+extension Date {
+    static func getFormattedDate(dateString: String , formatter:String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = formatter
+        
+        let date: Date? = dateFormatterGet.date(from: dateString)
+        print("Date",dateFormatterPrint.string(from: date!))
+        return dateFormatterPrint.string(from: date!);
+    }
 }
