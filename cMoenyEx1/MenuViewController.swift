@@ -16,11 +16,6 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        if aqiArray != nil {
             let cell = aqiCollectionView.dequeueReusableCell(withReuseIdentifier: "aqiCell", for: indexPath) as! AqiCollectionViewCell
-           //set wrapping button label
-//           cell.btnTitle.titleLabel?.lineBreakMode = .byWordWrapping
-//           cell.btnTitle.titleLabel?.textAlignment = .center
-           //
-//           cell.btnTitle.setTitle(aqiArray![indexPath.row].title, for: .normal)
            cell.txtTitle.text = aqiArray![indexPath.row].title!
            //
            cell.imgView.loadImageUsingCache(withUrl: aqiArray![indexPath.row].url!)
@@ -34,7 +29,9 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedRow = indexPath.row
-        self.performSegue(withIdentifier: "userSelectSegue", sender: self)
+        if aqiArray != nil {
+            self.performSegue(withIdentifier: "userSelectSegue", sender: self)
+        }
     }
     
     @IBOutlet weak var aqiCollectionView: UICollectionView!
@@ -51,8 +48,14 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
         sectionInset: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     )
     
-   
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //MARK: - fetch data in the first time
+        if aqiArray == nil{
+        getData()
+        aqiCollectionView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,7 +82,7 @@ class MenuViewController: UIViewController, UICollectionViewDataSource,UICollect
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 	
-        print ("selectROw: \(selectedRow)")
+   
         if (segue.identifier == "userSelectSegue") {
             let nextVC =  segue.destination as! DetailViewController
             nextVC.passDate = self.aqiArray?[selectedRow].date

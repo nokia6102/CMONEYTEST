@@ -106,7 +106,19 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A17-V3-NC0">
+                                                    <rect key="frame" x="36.5" y="36" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="A17-V3-NC0" secondAttribute="height" multiplier="1:1" id="C0f-25-Uh5"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="A17-V3-NC0" firstAttribute="centerY" secondItem="2SY-HQ-rMl" secondAttribute="centerY" id="5uN-aT-FWE"/>
+                                            <constraint firstItem="A17-V3-NC0" firstAttribute="centerX" secondItem="2SY-HQ-rMl" secondAttribute="centerX" id="cs7-qS-l30"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
