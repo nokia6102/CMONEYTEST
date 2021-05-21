@@ -119,9 +119,8 @@ extension MenuViewController{
                 if let data = data , let result = try? decoder.decode([ExCmoney].self, from: data){
                     
                     //取完資料後再將結果放進array中
-                    
                     self.aqiArray = result
-                    print (self.aqiArray?[0])
+           
                     DispatchQueue.main.async {
                         //最後再重新讀取 tabelView 的資料一次
                         self.aqiCollectionView.reloadData()
@@ -149,7 +148,16 @@ extension UIImageView {
         let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
         addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        activityIndicator.center = self.center
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = true // default is true
+        // Springs and struts
+        activityIndicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        activityIndicator.autoresizingMask = [
+            .flexibleLeftMargin,
+            .flexibleRightMargin,
+            .flexibleTopMargin,
+            .flexibleBottomMargin
+        ]
         
         // if not, download image from url
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
