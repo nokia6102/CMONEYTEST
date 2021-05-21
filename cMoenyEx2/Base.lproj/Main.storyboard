@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cMoenyEx1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cMoenyEx2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
         <!--Menu View Controller-->
         <scene sceneID="yah-ST-AHe">
             <objects>
-                <viewController id="cah-ev-Bdt" customClass="MenuViewController" customModule="cMoenyEx1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cah-ev-Bdt" customClass="MenuViewController" customModule="cMoenyEx2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U5O-V6-xUE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="aqiCell" id="JEv-g8-lGI" customClass="AqiCollectionViewCell" customModule="cMoenyEx1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="aqiCell" id="JEv-g8-lGI" customClass="AqiCollectionViewCell" customModule="cMoenyEx2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -100,7 +100,7 @@
                                             <outlet property="txtTitle" destination="aRF-5i-38n" id="d3j-eU-NLL"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="errorCell" id="2SY-HQ-rMl" customClass="AqiCollectionViewCell" customModule="cMoenyEx1" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="errorCell" id="2SY-HQ-rMl" customClass="AqiCollectionViewCell" customModule="cMoenyEx2" customModuleProvider="target">
                                         <rect key="frame" x="94" y="0.0" width="93" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -162,7 +162,7 @@
         <!--Detail View Controller-->
         <scene sceneID="m6u-rG-aqt">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="Xvr-vX-V9c" customClass="DetailViewController" customModule="cMoenyEx1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="Xvr-vX-V9c" customClass="DetailViewController" customModule="cMoenyEx2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jU5-sW-a2k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +173,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcn-vO-8B7">
                                         <rect key="frame" x="24" y="37" width="327" height="245"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="245" id="V8s-w9-Jod"/>
+                                            <constraint firstAttribute="width" secondItem="Gcn-vO-8B7" secondAttribute="height" multiplier="327:245" id="HNo-Ey-qhs"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cG-64-EBl">
