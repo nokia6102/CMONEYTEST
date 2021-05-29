@@ -1,0 +1,15 @@
+
+優點:
+在做 url string 轉換的時候，會使用 percent encoding，進行處理
+會使用 enum coding keys 來和後端的 keys 進行轉換
+有使用 NSCache 這個類做快取
+
+可改善的點:
+string 轉 URL 有使用 force unwrap，這有機會造成 crash
+不應該有專案級的全域變數，例如： AQI_URL, imageCache
+建議使用 Swiftlint，這樣 Coding style 在整份專案上會一致。空格也會一致，冒號前後的空格也會一致，大括號的位置也會一致。
+前半段沒有使用 safely unwrap，但後面又有些地方有，建議使用 Swift 中的 safely unwrap
+MenuViewController 有一個 timer，但並沒有使用到，為什麼會有這個 timer
+@objc func updateData()這個 func，後續有和 refreshControl 連動，但這個專案使用的是暫停 1 秒。但實際上，完成 updateData() 不一定會是 1 秒，有可能比 1 秒多，也有可能比 1 秒少。應使用 closure, delegate 等方式，在非同步任務完成後，進行 UI 的對應行為。
+這個專案 Model 和 View 耦合，UIImageView extension 的能力不符合 Apple MVC 架構與現在已知的 MVX 系列。
+建議檔案多切幾個，並使用有意義的檔名分類
